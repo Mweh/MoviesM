@@ -1,5 +1,5 @@
 //
-//  MoviesApp.swift
+//  MoviesMApp.swift
 //  MoviesM
 //
 //  Created by Muhammad Fahmi on 24/11/26.
@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct MoviesApp: App {
+struct MoviesMApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack { GenresRouter.makeView() }
         }
     }
 }
