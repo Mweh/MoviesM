@@ -20,13 +20,15 @@ struct GenresView: View {
                 ContentUnavailableView("No genres available", systemImage: "film")
             case .loaded(let genres):
                 List(genres) { genre in Text(genre.name) }
-            case .failed(let message):
+            case .failed(let message, let canRetry):
                 ContentUnavailableView {
                     Label("Genres unavailable", systemImage: "exclamationmark.circle")
                 } description: {
                     Text(message)
                 } actions: {
-                    Button("Retry") { attempt += 1 }
+                    if canRetry {
+                        Button("Retry") { attempt += 1 }
+                    }
                 }
             }
         }

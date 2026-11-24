@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2869ADEB8727628C091F2D5B /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128BA4F6E4AB6C1D1132DBFB /* Genre.swift */; };
 		45E143DD368B84A437FD2A8F /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06645E989C53C84909A42AB /* GenresView.swift */; };
+		9F99468D30B5E89400D7FAE3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F99468C30B5E89400D7FAE3 /* File.swift */; };
+		AB0000000000000000000006 /* TMDBClient in Frameworks */ = {isa = PBXBuildFile; productRef = AB0000000000000000000003 /* TMDBClient */; };
 		BBD47FD648625F16D1F662BB /* GenresInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E9EBB60492C20D56E3E1E7 /* GenresInteractor.swift */; };
 		E82F3ECF62250FBB18E69C1D /* MoviesMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737C721D5814807B2C6F455 /* MoviesMApp.swift */; };
 		F8BF5E9A53E10419C4F0886D /* GenresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883479F9B9BECBC88D6F27F /* GenresPresenter.swift */; };
@@ -18,12 +19,24 @@
 /* Begin PBXFileReference section */
 		0737C721D5814807B2C6F455 /* MoviesMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesMApp.swift; sourceTree = "<group>"; };
 		08E9EBB60492C20D56E3E1E7 /* GenresInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresInteractor.swift; sourceTree = "<group>"; };
-		128BA4F6E4AB6C1D1132DBFB /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		1883479F9B9BECBC88D6F27F /* GenresPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresPresenter.swift; sourceTree = "<group>"; };
 		5A85E876E6ABC2A2F5ED9EDC /* MoviesM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F99468C30B5E89400D7FAE3 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		AB0000000000000000000007 /* Config/Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		B06645E989C53C84909A42AB /* GenresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresView.swift; sourceTree = "<group>"; };
 		DC814FE39000AC7AC354B41A /* GenresRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB0000000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0000000000000000000006 /* TMDBClient in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		556CA6F2683753706A76D85B /* Products */ = {
@@ -38,19 +51,35 @@
 			isa = PBXGroup;
 			children = (
 				0737C721D5814807B2C6F455 /* MoviesMApp.swift */,
-				9332366A2BFD7665152D2829 /* Genres */,
+				9F99468C30B5E89400D7FAE3 /* File.swift */,
+				AB0000000000000000000001 /* Features */,
 			);
 			path = MoviesM;
 			sourceTree = "<group>";
 		};
-		9332366A2BFD7665152D2829 /* Genres */ = {
+		9332366A2BFD7665152D2829 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				128BA4F6E4AB6C1D1132DBFB /* Genre.swift */,
 				08E9EBB60492C20D56E3E1E7 /* GenresInteractor.swift */,
 				1883479F9B9BECBC88D6F27F /* GenresPresenter.swift */,
 				DC814FE39000AC7AC354B41A /* GenresRouter.swift */,
 				B06645E989C53C84909A42AB /* GenresView.swift */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		AB0000000000000000000001 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AB0000000000000000000002 /* Genres */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AB0000000000000000000002 /* Genres */ = {
+			isa = PBXGroup;
+			children = (
+				9332366A2BFD7665152D2829 /* VIPER */,
 			);
 			path = Genres;
 			sourceTree = "<group>";
@@ -58,6 +87,7 @@
 		BFD14F9AA1DF093C707D452F = {
 			isa = PBXGroup;
 			children = (
+				AB0000000000000000000007 /* Config/Debug.xcconfig */,
 				871BB8F1A40D7BDA6659B63C /* MoviesM */,
 				556CA6F2683753706A76D85B /* Products */,
 			);
@@ -70,6 +100,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE97A0BFAE32E4021F49B275 /* Build configuration list for PBXNativeTarget "MoviesM" */;
 			buildPhases = (
+				AB0000000000000000000005 /* Frameworks */,
 				1771B8079936581874DC9205 /* Sources */,
 			);
 			buildRules = (
@@ -78,6 +109,7 @@
 			);
 			name = MoviesM;
 			packageProductDependencies = (
+				AB0000000000000000000003 /* TMDBClient */,
 			);
 			productName = MoviesM;
 			productReference = 5A85E876E6ABC2A2F5ED9EDC /* MoviesM.app */;
@@ -101,6 +133,9 @@
 			);
 			mainGroup = BFD14F9AA1DF093C707D452F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AB0000000000000000000004 /* XCLocalSwiftPackageReference "Packages/TMDBClient" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 556CA6F2683753706A76D85B /* Products */;
 			projectDirPath = "";
@@ -116,8 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2869ADEB8727628C091F2D5B /* Genre.swift in Sources */,
 				BBD47FD648625F16D1F662BB /* GenresInteractor.swift in Sources */,
+				9F99468D30B5E89400D7FAE3 /* File.swift in Sources */,
 				F8BF5E9A53E10419C4F0886D /* GenresPresenter.swift in Sources */,
 				FC917E8EE2E911721CE0C1B3 /* GenresRouter.swift in Sources */,
 				45E143DD368B84A437FD2A8F /* GenresView.swift in Sources */,
@@ -192,6 +227,7 @@
 		};
 		495B2C865775F679C3340C78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB0000000000000000000007 /* Config/Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -315,6 +351,20 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AB0000000000000000000004 /* XCLocalSwiftPackageReference "Packages/TMDBClient" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/TMDBClient;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB0000000000000000000003 /* TMDBClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TMDBClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 776B6EB1920186417BA402E7 /* Project object */;
 }

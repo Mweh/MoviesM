@@ -1,0 +1,2 @@
+TMDB_LOCAL_TOKEN =
+#include? "../.env.xcconfig"
