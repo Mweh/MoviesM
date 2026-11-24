@@ -22,7 +22,16 @@ enum DiscoveryRouter {
         let interactor = DiscoveryInteractor(genre: genre, client: client)
         return PagedList(presenter: PagedPresenter(fetch: interactor.movies),
                          emptyMessage: "No movies in this genre.") { movie in
-            Text(movie.title)
+            NavigationLink {
+                MovieDetailsRouter.makeView(id: movie.id, client: client)
+            } label: {
+                VStack(alignment: .leading) {
+                    Text(movie.title)
+                    if let date = movie.releaseDate, !date.isEmpty {
+                        Text(date.prefix(4)).font(.caption).foregroundStyle(.secondary)
+                    }
+                }
+            }
         }
         .navigationTitle(genre.name)
     }
