@@ -8,8 +8,9 @@
 import SwiftUI
 import TMDBClient
 
-struct MovieDetailsView: View {
+struct MovieDetailsView<Reviews: View>: View {
     @State var presenter: MovieDetailsPresenter
+    let reviews: () -> Reviews
     @State private var attempt = 0
 
     var body: some View {
@@ -37,6 +38,7 @@ struct MovieDetailsView: View {
                             Text(movie.genres.map(\.name).joined(separator: ", "))
                         }
                     }
+                    NavigationLink("User reviews", destination: reviews)
                     Section("Overview") {
                         Text(movie.overview.flatMap { $0.isEmpty ? nil : $0 } ?? "No overview available.")
                     }

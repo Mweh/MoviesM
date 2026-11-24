@@ -12,6 +12,7 @@
 		67E510DE250F29B6147F5B59 /* PagedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57092C70D2334EE4E336F49B /* PagedPresenter.swift */; };
 		89CD247F6F3C4D52A0B72E7D /* PagedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FAAE37B7F265C8C953729 /* PagedList.swift */; };
 		9F99468D30B5E89400D7FAE3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F99468C30B5E89400D7FAE3 /* File.swift */; };
+		A450421108E55F62401C4F3B /* ReviewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F337438482900897B2DB643 /* ReviewsRouter.swift */; };
 		AB0000000000000000000006 /* TMDBClient in Frameworks */ = {isa = PBXBuildFile; productRef = AB0000000000000000000003 /* TMDBClient */; };
 		BBD47FD648625F16D1F662BB /* GenresInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E9EBB60492C20D56E3E1E7 /* GenresInteractor.swift */; };
 		CACE8FBFE3F6C0770F04F438 /* DiscoveryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214F96E14BFA75BED342281 /* DiscoveryRouter.swift */; };
@@ -29,6 +30,7 @@
 		3214F96E14BFA75BED342281 /* DiscoveryRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiscoveryRouter.swift; sourceTree = "<group>"; };
 		57092C70D2334EE4E336F49B /* PagedPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PagedPresenter.swift; sourceTree = "<group>"; };
 		5A85E876E6ABC2A2F5ED9EDC /* MoviesM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F337438482900897B2DB643 /* ReviewsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReviewsRouter.swift; sourceTree = "<group>"; };
 		9F99468C30B5E89400D7FAE3 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A45EBCF77AF3A113481F8833 /* MovieDetailsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MovieDetailsRouter.swift; sourceTree = "<group>"; };
 		AB0000000000000000000007 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -74,6 +76,15 @@
 				EDDD0F6F630859C16FF7EB1E /* MovieDetailsPresenter.swift */,
 				A45EBCF77AF3A113481F8833 /* MovieDetailsRouter.swift */,
 				E7A98D7CF92DA37EB2AFBE15 /* MovieDetailsView.swift */,
+			);
+			name = VIPER;
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		7FE4BE210D5F7351F22F0334 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				6F337438482900897B2DB643 /* ReviewsRouter.swift */,
 			);
 			name = VIPER;
 			path = VIPER;
@@ -126,6 +137,7 @@
 				AB0000000000000000000002 /* Genres */,
 				CCB2D9E7C16B34B67D36F431 /* Discovery */,
 				871454A091C99233BA649CF2 /* MovieDetails */,
+				E5E37985414BA9C709995030 /* Reviews */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -154,6 +166,15 @@
 			);
 			name = Discovery;
 			path = Discovery;
+			sourceTree = "<group>";
+		};
+		E5E37985414BA9C709995030 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				7FE4BE210D5F7351F22F0334 /* VIPER */,
+			);
+			name = Reviews;
+			path = Reviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +247,7 @@
 				E55D7AF030B330B3981B0725 /* MovieDetailsPresenter.swift in Sources */,
 				F23212639D97B61623C2DCC7 /* MovieDetailsRouter.swift in Sources */,
 				5BCEC09CC41EA54B5835F90F /* MovieDetailsView.swift in Sources */,
+				A450421108E55F62401C4F3B /* ReviewsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
