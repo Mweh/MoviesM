@@ -10,6 +10,7 @@ import TMDBClient
 
 struct MovieDetailsView<Reviews: View>: View {
     @State var presenter: MovieDetailsPresenter
+    let fetchTrailer: () async throws -> URL?
     let reviews: () -> Reviews
     @State private var attempt = 0
 
@@ -38,6 +39,7 @@ struct MovieDetailsView<Reviews: View>: View {
                             Text(movie.genres.map(\.name).joined(separator: ", "))
                         }
                     }
+                    Section("Trailer") { TrailerView(fetch: fetchTrailer) }
                     NavigationLink("User reviews", destination: reviews)
                     Section("Overview") {
                         Text(movie.overview.flatMap { $0.isEmpty ? nil : $0 } ?? "No overview available.")
