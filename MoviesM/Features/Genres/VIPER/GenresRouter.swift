@@ -9,7 +9,9 @@ import TMDBClient
 import SwiftUI
 
 enum GenresRouter {
-    @MainActor static func makeView(client: TMDBClient) -> GenresView {
-        GenresView(presenter: GenresPresenter(interactor: GenresInteractor(client: client)))
+    @MainActor static func makeView(client: TMDBClient) -> some View {
+        GenresView(presenter: GenresPresenter(interactor: GenresInteractor(client: client))) { genre in
+            DiscoveryRouter.makeView(genre: genre, client: client)
+        }
     }
 }

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import TMDBClient
 
-struct GenresView: View {
+struct GenresView<Destination: View>: View {
     @State var presenter: GenresPresenter
+    let destination: (Genre) -> Destination
     @State private var attempt = 0
 
     var body: some View {
@@ -19,7 +21,9 @@ struct GenresView: View {
             case .loaded(let genres) where genres.isEmpty:
                 ContentUnavailableView("No genres available", systemImage: "film")
             case .loaded(let genres):
-                List(genres) { genre in Text(genre.name) }
+                List(genres) { genre in
+                    NavigationLink { destination(genre) } label: { Text(genre.name) }
+                }
             case .failed(let message, let canRetry):
                 ContentUnavailableView {
                     Label("Genres unavailable", systemImage: "exclamationmark.circle")
