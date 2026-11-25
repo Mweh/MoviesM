@@ -7,10 +7,19 @@
 
 import TMDBClient
 import SwiftUI
+#if DEBUG
+import netfox
+#endif
 
 @main
 struct MoviesMApp: App {
     private let client = TMDBClient(token: ProcessInfo.processInfo.environment["TMDB_READ_TOKEN"] ?? "")
+
+    #if DEBUG
+    init() {
+        NFX.sharedInstance().start()
+    }
+    #endif
 
     var body: some Scene {
         WindowGroup {

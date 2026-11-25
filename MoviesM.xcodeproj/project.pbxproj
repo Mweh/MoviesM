@@ -23,6 +23,7 @@
 		F23212639D97B61623C2DCC7 /* MovieDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCF77AF3A113481F8833 /* MovieDetailsRouter.swift */; };
 		F8BF5E9A53E10419C4F0886D /* GenresPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883479F9B9BECBC88D6F27F /* GenresPresenter.swift */; };
 		FC917E8EE2E911721CE0C1B3 /* GenresRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC814FE39000AC7AC354B41A /* GenresRouter.swift */; };
+		A7BFB2073AF0960BEC13675A /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 69F8FA5791D92A53CBB70129 /* netfox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0000000000000000000006 /* TMDBClient in Frameworks */,
+				A7BFB2073AF0960BEC13675A /* netfox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +257,7 @@
 			name = MoviesM;
 			packageProductDependencies = (
 				AB0000000000000000000003 /* TMDBClient */,
+				69F8FA5791D92A53CBB70129 /* netfox */,
 			);
 			productName = MoviesM;
 			productReference = 5A85E876E6ABC2A2F5ED9EDC /* MoviesM.app */;
@@ -280,6 +283,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				AB0000000000000000000004 /* XCLocalSwiftPackageReference "Packages/TMDBClient" */,
+				812AB193C2168AA74331F0CF /* XCRemoteSwiftPackageReference "netfox" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 556CA6F2683753706A76D85B /* Products */;
@@ -577,10 +581,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		812AB193C2168AA74331F0CF /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		AB0000000000000000000003 /* TMDBClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TMDBClient;
+		};
+		69F8FA5791D92A53CBB70129 /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 812AB193C2168AA74331F0CF /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
